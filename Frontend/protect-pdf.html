@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protect PDF - iLovePDF Clone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>I ❤️ PDF</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="merge.html">Merge PDF</a></li>
+                    <li><a href="split.html">Split PDF</a></li>
+                    <li><a href="compress.html">Compress PDF</a></li>
+                    <li><a href="word-to-pdf.html">Word to PDF</a></li>
+                    <li><a href="protect-pdf.html" class="active">Protect PDF</a></li>
+                    <li><a href="edit-pdf.html">Edit PDF</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="tool-page">
+        <section class="tool-header">
+            <h2>Protect PDF file</h2>
+            <p>Add password protection to your PDF documents.</p>
+            <p class="tool-sub-note">(Uses basic PDF encryption. For stronger, enterprise-grade security, a backend is recommended.)</p>
+        </section>
+
+        <section class="tool-action-area">
+            <div class="upload-box" id="upload-box-protect">
+                <p>Drag & Drop PDF here</p>
+                <p>or</p>
+                <button class="select-file-button" id="select-protect-file">Select PDF file</button>
+                <input type="file" accept=".pdf" id="protect-file-input" class="hidden-file-input">
+            </div>
+
+            <div class="file-preview-area" id="protect-preview-area">
+                <p class="no-files-selected-text">No file selected yet.</p>
+            </div>
+
+            <div class="input-group">
+                <label for="password-input">Enter Password:</label>
+                <input type="password" id="password-input" placeholder="Enter your password">
+            </div>
+
+            <div class="action-buttons-container">
+                <button class="process-button" id="start-protect-process" disabled>Protect PDF</button>
+            </div>
+
+            <div id="message-area" class="message-box hidden"></div>
+            <div id="download-area" class="download-box hidden"></div>
+        </section>
+    </main>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-modal">&times;</span>
+            <h2 id="modal-title">Authenticate to Download</h2>
+            <div class="modal-body">
+                <p>Please enter your email and password to proceed with the download.</p>
+                <div class="input-group-modal">
+                    <label for="modal-email">Email:</label>
+                    <input type="email" id="modal-email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="input-group-modal">
+                    <label for="modal-password">Password:</label>
+                    <input type="password" id="modal-password" placeholder="********" required>
+                    <p>Password contain:- "A-Z, a-z, 0-9, @#$%^&*"</p>
+                </div>
+                <div id="modal-error-message" class="modal-error-message hidden"></div>
+                <button id="modal-submit-button" class="modal-submit-button" disabled>Submit</button>
+                <button id="modal-download-button" class="modal-download-button hidden">Download Your File</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,722 @@
+/* Basic Reset & Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #d32f2f; /* iLovePDF Red */
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+    width: 100%;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #ffe0b2; /* Lighter shade on hover/active */
+}
+
+
+/* Main Content Layout */
+main {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Index Page Specifics */
+.index-main {
+    text-align: center;
+}
+
+.hero-section {
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.hero-section h2 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.tool-card {
+    background-color: #fefefe;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none; /* For index page links */
+    color: inherit;
+    position: relative; /* For the 'New!' badge */
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card h3 {
+    color: #c62828; /* Slightly darker red */
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+}
+
+.tool-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* Tool Icons for Index Page */
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Placeholder for actual SVG/PNG icons */
+}
+
+.merge-icon { background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d32f2f"%3E%3Cpath d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"/%3E%3C/svg%3E'); }
+.split-icon { background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d32f2f"%3E%3Cpath d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 20H6v-2h3v2zm0-4H6v-2h3v2zm0-4H6v-2h3v2zm0-4H6V8h3v2zm0-4H6V4h3v2zm6 14h-3v-2h3v2zm0-4h-3v-2h3v2zm0-4h-3v-2h3v2zm0-4h-3V8h3v2zm0-4h-3V4h3v2zm3 0v16h-3V4h3z"/%3E%3C/svg%3E'); }
+.compress-icon { background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d32f2f"%3E%3Cpath d="M8 19c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-3h2v3c0 2.21-1.79 4-4 4h-4c-2.21 0-4-1.79-4-4v-3h2v3zm8-15c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v3H6V4c0-2.21 1.79-4 4-4h4c2.21 0 4 1.79 4 4v3h-2V4zM4 11v2h16v-2H4z"/%3E%3C/svg%3E'); }
+.word-icon { background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d32f2f"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2v-7h2v7zm4 0h-2v-7h2v7z"/%3E%3C/svg%3E'); }
+.protect-icon { background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d32f2f"%3E%3Cpath d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/%3E%3C/svg%3E'); }
+.edit-icon { background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d32f2f"%3E%3Cpath d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/%3E%3C/svg%3E'); }
+
+/* "New!" Badge */
+.new-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #28a745; /* Green */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* Tool Page Specifics */
+.tool-page {
+    padding: 2rem;
+    text-align: center;
+}
+
+.tool-header {
+    margin-bottom: 40px;
+}
+
+.tool-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tool-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tool-sub-note {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 10px;
+}
+
+.tool-action-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.upload-box {
+    border: 3px dashed #ccc;
+    border-radius: 10px;
+    padding: 50px 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.3s ease;
+}
+
+.upload-box.drag-over {
+    border-color: #d32f2f;
+    background-color: #ffebee;
+}
+
+.upload-box p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.select-file-button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+    margin-top: 20px;
+}
+
+.select-file-button:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
+
+.hidden-file-input {
+    display: none; /* Hide the default file input */
+}
+
+/* File Preview Area */
+.file-preview-area {
+    width: 100%;
+    max-width: 900px;
+    min-height: 100px; /* Give it some default height */
+    background-color: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center; /* Center items when few */
+    align-items: center; /* Center vertically when few */
+}
+
+.no-files-selected-text {
+    color: #888;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.file-thumbnail {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 120px; /* Fixed width for thumbnails */
+    box-sizing: border-box;
+    position: relative;
+    cursor: grab; /* Indicates draggable */
+}
+
+.file-thumbnail.dragging {
+    opacity: 0.5;
+    border: 2px dashed #d32f2f;
+}
+
+.file-thumbnail img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background-color: #f5f5f5; /* Light grey background for icon area */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.file-thumbnail .file-name {
+    font-size: 0.85em;
+    color: #444;
+    word-break: break-word;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-thumbnail .remove-file {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #d32f2f;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.file-thumbnail .remove-file:hover {
+    background-color: #b71c1c;
+}
+
+/* Generic Input Group */
+.input-group {
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus {
+    border-color: #d32f2f;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+
+/* Action Buttons Container */
+.action-buttons-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px; /* Limit button width */
+}
+
+.process-button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.process-button:hover:not(:disabled) {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
+
+.process-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Message & Download Areas */
+.message-box, .download-box {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.message-box.message-info {
+    background-color: #e3f2fd; /* Light blue */
+    color: #1565c0; /* Dark blue */
+    border: 1px solid #90caf9;
+}
+
+.message-box.message-error {
+    background-color: #ffebee; /* Light red */
+    color: #c62828; /* Dark red */
+    border: 1px solid #ef9a9a;
+}
+
+.download-box {
+    background-color: #e8f5e9; /* Light green */
+    color: #2e7d32; /* Dark green */
+    border: 1px solid #a5d6a7;
+}
+
+.download-box a {
+    color: #1b5e20;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #c8e6c9;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.download-box a:hover {
+    background-color: #a5d6a7;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Limitation Message on non-functional pages */
+.action-info-message {
+    background-color: #e3f2fd; /* Light blue, similar to info message */
+    border: 1px solid #90caf9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 800px;
+    text-align: left;
+    color: #1565c0;
+}
+
+.action-info-message p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.action-info-message p:last-child {
+    margin-bottom: 0;
+}
+
+.action-info-message strong {
+    color: #0d47a1; /* Darker blue for emphasis */
+}
+
+
+/* Authentication Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    backdrop-filter: blur(5px); /* Optional: blur background */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+}
+
+.modal.visible {
+    display: flex; /* Show when 'visible' class is added */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* For browsers that don't support flex centering */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #d32f2f;
+    text-decoration: none;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    color: #d32f2f;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-body p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group-modal {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group-modal label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.input-group-modal input[type="email"],
+.input-group-modal input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.input-group-modal input[type="email"]:focus,
+.input-group-modal input[type="password"]:focus {
+    border-color: #d32f2f;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+
+.modal-error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-submit-button,
+.modal-download-button { /* Apply similar styling for both buttons */
+    background-color: #d32f2f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.modal-submit-button:hover:not(:disabled),
+.modal-download-button:hover:not(:disabled) {
+    background-color: #b71c1c;
+}
+
+.modal-submit-button:disabled,
+.modal-download-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Ensure .hidden class works for the new download button too */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    header nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    header nav ul li {
+        margin: 5px 0;
+    }
+    main {
+        margin: 15px auto;
+        padding: 1rem;
+    }
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    .upload-box, .file-preview-area, .action-buttons-container, .message-box, .download-box, .action-info-message, .input-group, .modal-content {
+        max-width: 100%;
+    }
+    .file-thumbnail {
+        width: 100px;
+    }
+}
+.hidden-input-file {
+    /* Standard method to hide elements visually while keeping them for accessibility/functionality */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    /* Crucial: remove from document flow */
+    appearance: none; /* For WebKit/Blink browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* This styles the label to look exactly like your button */
+.select-file-button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+    margin-top: 20px;
+    /* Important for labels: make them behave like block-level buttons for layout */
+    display: inline-block;
+    text-align: center;
+}
+
+.select-file-button:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
